@@ -1,10 +1,10 @@
+// 全局样式文件
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  * {
     padding: 0;
     margin: 0;
-    color: ${({ theme }) => theme.color};
   }
 `
 
