@@ -5,6 +5,5 @@ export const HomeContainer = styled.div`
 `
 
 export const HomeMain = styled.main`
-	background-color: lightblue;
 	flex: 6;
 `
