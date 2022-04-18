@@ -1,11 +1,13 @@
 import React from 'react'
 
-import { HomeContainer } from './style'
+import { HomeContainer, HomeMain } from './style'
+import Sidebar from '../../components/Sidebar/Sidebar'
 
 const Home = () => {
 	return (
 		<HomeContainer>
-			home
+			<Sidebar />
+			<HomeMain>container</HomeMain>
 		</HomeContainer>
 	)
 }

@@ -1,7 +1,7 @@
 // 主题变量文件
 
 const theme = {
-	color: 'red',
+	color: '#7451f8',
 }
 
 export default theme
