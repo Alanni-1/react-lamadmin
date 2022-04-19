@@ -48,7 +48,7 @@ export function typeData(type) {
 				icon: (
 					<MonetizationOnOutlined
 						style={{
-							color: 'greeen',
+							color: 'green',
 							backgroundColor: 'rgba(0, 128, 0, .2)',
 						}}
 					/>
