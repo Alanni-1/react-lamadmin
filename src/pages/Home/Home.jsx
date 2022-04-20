@@ -19,7 +19,7 @@ const Home = () => {
 			{/* 图表插件 */}
 			<HomeCharts>
 				<Featured />
-				<Chart />
+				<Chart aspect={5 / 2} title="Last 6 Months ( Revenue )" />
 			</HomeCharts>
 			{/*  */}
 			<ListContainer>

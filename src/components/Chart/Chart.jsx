@@ -4,28 +4,25 @@ import {
 	AreaChart,
 	Area,
 	XAxis,
-	YAxis,
 	CartesianGrid,
 	Tooltip,
 	ResponsiveContainer,
 } from 'recharts'
 
+const Chart = ({ aspect, title }) => {
+	const data = [
+		{ name: 'January', Total: 1200 },
+		{ name: 'February', Total: 2100 },
+		{ name: 'March', Total: 800 },
+		{ name: 'April', Total: 1600 },
+		{ name: 'May', Total: 900 },
+		{ name: 'June', Total: 1700 },
+	]
 
-const Chart = () => {
-
-  const data = [
-		{name: 'January', Total: 1200},
-		{name: 'February', Total: 2100},
-		{name: 'March', Total: 800},
-		{name: 'April', Total: 1600},
-		{name: 'May', Total: 900},
-		{name: 'June', Total: 1700},
-  ]
-
-  return (
+	return (
 		<ChartContainer>
-      <ChartTitle>Last 6 Months (Revenue)</ChartTitle>
-			<ResponsiveContainer width="100%" height="90%">
+			<ChartTitle>{title}</ChartTitle>
+			<ResponsiveContainer width="100%" aspect={aspect}>
 				<AreaChart
 					width={730}
 					height={250}
@@ -33,13 +30,7 @@ const Chart = () => {
 					margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
 				>
 					<defs>
-						<linearGradient
-							id="total"
-							x1="0"
-							y1="0"
-							x2="0"
-							y2="1"
-						>
+						<linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
 							<stop
 								offset="5%"
 								stopColor="#8884d8"
@@ -52,8 +43,11 @@ const Chart = () => {
 							/>
 						</linearGradient>
 					</defs>
-					<XAxis dataKey="name" stroke='gray' />
-					<CartesianGrid strokeDasharray="3 3" className='chartGrid' />
+					<XAxis dataKey="name" stroke="gray" />
+					<CartesianGrid
+						strokeDasharray="3 3"
+						className="chartGrid"
+					/>
 					<Tooltip />
 					<Area
 						type="monotone"
@@ -65,7 +59,7 @@ const Chart = () => {
 				</AreaChart>
 			</ResponsiveContainer>
 		</ChartContainer>
-  )
+	)
 }
 
 export default Chart

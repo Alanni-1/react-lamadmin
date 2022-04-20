@@ -1,14 +1,11 @@
 import styled from 'styled-components'
+import { Charts } from '../../style'
 
-export const HomeWidgets = styled.div`
-	padding-bottom: 20px;
-	display: flex;
-	gap: 20px;
-`
-export const HomeCharts = styled(HomeWidgets)``
+export const HomeWidgets = styled(Charts)``
+export const HomeCharts = styled(Charts)``
 
 export const ListContainer = styled.div`
-	box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+	box-shadow: ${({ theme }) => theme.boxShadow};
 	padding: 20px;
 	margin-bottom: 20px;
 

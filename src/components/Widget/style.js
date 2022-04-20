@@ -5,7 +5,7 @@ export const WidgetContainer = styled.div`
 	justify-content: space-between;
 	flex: 1;
 	padding: 10px;
-	box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+	box-shadow: ${({ theme }) => theme.boxShadow};
 	border-radius: 10px;
 	height: 100px;
 

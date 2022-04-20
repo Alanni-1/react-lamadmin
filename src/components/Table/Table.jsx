@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-	Table,
-	TableBody,
-	TableHead,
-	TableRow,
-	Paper,
-} from '@mui/material'
+import { Table, TableBody, TableHead, TableRow, Paper } from '@mui/material'
 import { DataTableCell, DataTableContainer } from './style'
 
 const Tables = () => {
@@ -95,7 +89,9 @@ const Tables = () => {
 							<DataTableCell>{row.amount}</DataTableCell>
 							<DataTableCell>{row.method}</DataTableCell>
 							<DataTableCell>
-								<span className={`${row.status}`}>{row.status}</span>
+								<span className={`${row.status}`}>
+									{row.status}
+								</span>
 							</DataTableCell>
 						</TableRow>
 					))}

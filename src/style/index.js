@@ -18,3 +18,9 @@ export const Main = styled.main`
 	overflow: auto;
 	box-sizing: border-box;
 `
+
+export const Charts = styled.div`
+	padding-bottom: 20px;
+	display: flex;
+	gap: 20px;
+`
