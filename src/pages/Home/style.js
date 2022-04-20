@@ -1,23 +1,5 @@
 import styled from 'styled-components'
 
-export const HomeContainer = styled.div`
-	display: flex;
-`
-export const HomeLeft = styled.div`
-	flex: 1;
-`
-
-export const HomeRight = styled.div`
-	flex: 6;
-	max-height: 100vh;
-`
-export const HomeMain = styled.main`
-	padding: 20px 20px 0;
-	height: calc(100% - 51px);
-	overflow: auto;
-	box-sizing: border-box;
-`
-
 export const HomeWidgets = styled.div`
 	padding-bottom: 20px;
 	display: flex;
