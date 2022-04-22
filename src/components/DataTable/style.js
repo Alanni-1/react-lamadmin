@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const DataTableContainer = styled.div`
 	height: 650px;
@@ -46,7 +47,7 @@ export const DataTableContainer = styled.div`
 			border-radius: 5px;
 			color: darkblue;
 			border: 1px dotted darkblue;
-      cursor: pointer;
+			cursor: pointer;
 		}
 
 		.deleteButton {
@@ -54,7 +55,30 @@ export const DataTableContainer = styled.div`
 			border-radius: 5px;
 			color: crimson;
 			border: 1px dotted rgba(220, 20, 60, 0.6);
-      cursor: pointer;
+			cursor: pointer;
 		}
+	}
+`
+export const DataTableLink = styled(Link)`
+	text-decoration: none;
+`
+
+export const DatatbleTitle = styled.div`
+	width: 100%;
+	font-style: 24px;
+	color: gray;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	a {
+		color: green;
+		font-style: 16px;
+		font-weight: 400;
+		border: 1px solid green;
+		padding: 5px;
+		border-radius: 5px;
+		cursor: pointer;
 	}
 `

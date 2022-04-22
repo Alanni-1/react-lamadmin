@@ -17,6 +17,7 @@ const sidebarData = [
 	{
 		title: 'Dashboard',
 		icon: <DashboardIcon />,
+		to: '/',
 	},
 	{
 		title: 'LISTS',
@@ -24,18 +25,22 @@ const sidebarData = [
 	{
 		title: 'Users',
 		icon: <PersonOutlineIcon />,
+		to: '/users',
 	},
 	{
 		title: 'Products',
 		icon: <StoreIcon />,
+		to: 'products',
 	},
 	{
 		title: 'Orders',
 		icon: <CreditCardIcon />,
+		to: '',
 	},
 	{
 		title: 'Delivery',
 		icon: <LocalShippingIcon />,
+		to: '',
 	},
 	{
 		title: 'USEFUL',
@@ -43,36 +48,43 @@ const sidebarData = [
 	{
 		title: 'Stats',
 		icon: <InsertChartIcon />,
+		to: '',
 	},
 	{
 		title: 'Notifications',
 		icon: <NotificationsNoneIcon />,
+		to: '',
 	},
-  {
-    title: 'SERVICE'
-  },
+	{
+		title: 'SERVICE',
+	},
 	{
 		title: 'System Health',
 		icon: <SettingsSystemDaydreamOutlinedIcon />,
+		to: '',
 	},
 	{
 		title: 'Logs',
 		icon: <PsychologyOutlinedIcon />,
+		to: '',
 	},
-  {
-    title: 'Settings',
-    icon: <SettingsSystemDaydreamOutlinedIcon />,
-  },
+	{
+		title: 'Settings',
+		icon: <SettingsSystemDaydreamOutlinedIcon />,
+		to: '',
+	},
 	{
 		title: 'USER',
 	},
 	{
 		title: 'Profile',
 		icon: <AccountCircleOutlinedIcon />,
+		to: '',
 	},
 	{
 		title: 'Logout',
 		icon: <ExitToAppIcon />,
+		to: '',
 	},
 ]
 

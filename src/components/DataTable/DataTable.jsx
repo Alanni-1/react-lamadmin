@@ -1,5 +1,5 @@
 import React from 'react'
-import { DataTableContainer } from './style'
+import { DataTableContainer, DataTableLink, DatatbleTitle } from './style'
 import { DataGrid } from '@mui/x-data-grid'
 import { userColumns, userRows } from './data'
 const DataTable = () => {
@@ -10,7 +10,9 @@ const DataTable = () => {
 			width: 200,
 			renderCell: () => (
 				<div className="cellAction">
-					<div className="viewButton">View</div>
+					<DataTableLink to='/users/test'>
+						<div className="viewButton">View</div>
+					</DataTableLink>
 					<div className="deleteButton">Delete</div>
 				</div>
 			),
@@ -19,6 +21,12 @@ const DataTable = () => {
 
 	return (
 		<DataTableContainer>
+			<DatatbleTitle>
+				Add New Users
+				<DataTableLink to='/users/new'>
+					Add New 
+				</DataTableLink>
+			</DatatbleTitle>
 			<DataGrid
 				rows={userRows}
 				columns={userColumns.concat(actionColumn)}

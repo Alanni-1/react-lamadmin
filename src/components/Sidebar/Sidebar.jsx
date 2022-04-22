@@ -5,23 +5,24 @@ import {
 	SidebarLogo,
 	SidebarNav,
 	SwitchColor,
+	SidebarLink,
 } from './style'
 import sidebarData from './data'
 
 const Sidebar = () => {
 	return (
 		<SidebarContainer>
-			<SidebarLogo>
+			<SidebarLogo to='/'>
 				<span className="logo">lamadmin</span>
 			</SidebarLogo>
 			<SidebarNav>
 				<ul>
 					{sidebarData.map((item) =>
 						item?.icon ? (
-							<li key={item.title}>
+							<SidebarLink to={item.to} key={item.title}>
 								{item.icon}
 								<span>{item.title}</span>
-							</li>
+							</SidebarLink>
 						) : (
 							<p key={item.title}>{item.title}</p>
 						)
