@@ -8,11 +8,19 @@ import {
 	SidebarLink,
 } from './style'
 import sidebarData from './data'
+import PubSub from 'pubsub-js'
+import { dark, light } from '../../style/theme'
+
 
 const Sidebar = () => {
+	const setTheme = (data) => {
+		return () => {
+			PubSub.publish('setTheme', data)
+		}
+	}
 	return (
 		<SidebarContainer>
-			<SidebarLogo to='/'>
+			<SidebarLogo to="/">
 				<span className="logo">lamadmin</span>
 			</SidebarLogo>
 			<SidebarNav>
@@ -30,8 +38,8 @@ const Sidebar = () => {
 				</ul>
 			</SidebarNav>
 			<SwitchColor>
-				<ButColor color="whitesmoke" />
-				<ButColor color="#333" />
+				<ButColor color="whitesmoke" onClick={setTheme(light)} />
+				<ButColor color="#333" onClick={setTheme(dark)} />
 			</SwitchColor>
 		</SidebarContainer>
 	)

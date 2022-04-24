@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
-export const ChartContainer = styled.div`
+export const ChartContainer = styled.div.attrs({
+	className: 'box_shadow',
+})`
 	flex: 4;
-	box-shadow: ${({ theme }) => theme.boxShadow};
 	padding: 10px;
 	color: gray;
 

@@ -2,8 +2,9 @@ import styled from 'styled-components'
 
 export const NewContainer = styled.div``
 
-export const NewTop = styled.div`
-	box-shadow: ${({ theme }) => theme.boxShadow};
+export const NewTop = styled.div.attrs({
+	className: 'box_shadow',
+})`
 	padding: 10px;
 	margin-bottom: 20px;
 	display: flex;
@@ -35,6 +36,7 @@ export const NewBotton = styled(NewTop)`
 			flex-wrap: wrap;
 			gap: 30px;
 			justify-content: space-around;
+			color: ${({ theme }) => theme.table_color};
 
 			.formInput {
 				width: 40%;
@@ -54,6 +56,8 @@ export const NewBotton = styled(NewTop)`
 					padding: 5px;
 					border: none;
 					border-bottom: 1px solid gray;
+					background-color: ${({ theme }) =>
+						theme.input_backgroundColor};
 				}
 			}
 

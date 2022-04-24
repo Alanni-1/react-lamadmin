@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
 	SearchOutlined,
 	LanguageOutlined,
@@ -9,8 +9,23 @@ import {
 	ListOutlined,
 } from '@mui/icons-material'
 import { NavbarContainer, Wrapper, NavbarItems, Search } from './style'
+import PubSub from 'pubsub-js'
+import { dark, light } from '../../style/theme'
 
 const Navbar = () => {
+	const [theme, setTheme] = useState(light)
+	useEffect(() => {
+		PubSub.subscribe('getTheme', (_, data) => setTheme(data))
+		console.log(theme)
+		return () => {
+			
+		}
+	}, [theme])
+
+	const setThemeFunc = () => {
+		console.log(theme === light ? dark : light)
+		PubSub.publish('setTheme', theme === light ? dark : light)
+	}
 	return (
 		<NavbarContainer>
 			<Wrapper>
@@ -23,7 +38,7 @@ const Navbar = () => {
 						<LanguageOutlined />
 						English
 					</div>
-					<div>
+					<div onClick={setThemeFunc}>
 						<DarkModeOutlined />
 					</div>
 					<div>
@@ -31,11 +46,11 @@ const Navbar = () => {
 					</div>
 					<div>
 						<NotificationAddOutlined />
-            <div>1</div>
+						<div>1</div>
 					</div>
 					<div>
 						<ChatBubbleOutlineOutlined />
-            <div>2</div>
+						<div>2</div>
 					</div>
 					<div>
 						<ListOutlined />

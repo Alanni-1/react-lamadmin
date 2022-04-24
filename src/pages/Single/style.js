@@ -3,9 +3,10 @@ import { Charts } from '../../style'
 
 export const SingleCharts = styled(Charts)``
 
-export const UserFeatured = styled.div`
+export const UserFeatured = styled.div.attrs({
+	className: 'box_shadow'
+})`
 	flex: 2;
-	box-shadow: ${({ theme }) => theme.boxShadow};
 	padding: 20px;
 	position: relative;
 
@@ -61,8 +62,9 @@ export const Title = styled.h1`
 	margin-bottom: 20px;
 `
 
-export const SingleList = styled.div`
-	box-shadow: ${({ theme }) => theme.boxShadow};
+export const SingleList = styled.div.attrs({
+	className: 'box_shadow'
+})`
 	margin-bottom: 20px;
 	padding: 20px;
 `

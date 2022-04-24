@@ -30,7 +30,7 @@ const sidebarData = [
 	{
 		title: 'Products',
 		icon: <StoreIcon />,
-		to: 'products',
+		to: '/products',
 	},
 	{
 		title: 'Orders',

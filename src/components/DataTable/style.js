@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { DataGrid } from '@mui/x-data-grid'
 
 export const DataTableContainer = styled.div`
-	height: 650px;
+	height: 630px;
 
 	.cellWithImg {
 		display: flex;
@@ -45,7 +46,7 @@ export const DataTableContainer = styled.div`
 		.viewButton {
 			padding: 2px 5px;
 			border-radius: 5px;
-			color: darkblue;
+			color: ${({ theme }) => theme.table_color || 'darkblue'};
 			border: 1px dotted darkblue;
 			cursor: pointer;
 		}
@@ -53,7 +54,7 @@ export const DataTableContainer = styled.div`
 		.deleteButton {
 			padding: 2px 5px;
 			border-radius: 5px;
-			color: crimson;
+			color: ${({ theme }) => theme.table_color || 'crimson'};
 			border: 1px dotted rgba(220, 20, 60, 0.6);
 			cursor: pointer;
 		}
@@ -81,4 +82,8 @@ export const DatatbleTitle = styled.div`
 		border-radius: 5px;
 		cursor: pointer;
 	}
+`
+
+export const DatableDataGrid = styled(DataGrid)`
+	color: ${({ theme }) => theme.table_color} !important;
 `

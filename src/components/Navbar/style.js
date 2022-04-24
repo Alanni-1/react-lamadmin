@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const NavbarContainer = styled.div`
 	height: 50px;
-	border-bottom: 0.5px solid rgb(231, 228, 228);
+	border-bottom: 0.5px solid ${({ theme }) => theme.borderColor};
 	display: flex;
 	align-items: center;
 	font-size: 14px;
@@ -21,10 +21,11 @@ export const NavbarItems = styled.div`
 	align-items: center;
 
 	& > div {
-    position: relative;
+		position: relative;
 		display: flex;
 		align-items: center;
 		margin-right: 20px;
+		color: ${({ theme }) => theme.navbar_color};
 
 		svg {
 			font-size: 20px;
@@ -43,13 +44,13 @@ export const NavbarItems = styled.div`
 			border-radius: 50%;
 			color: white;
 			display: flex;
-      font-size: 10px;
-      font-weight: bold;
+			font-size: 10px;
+			font-weight: bold;
 			align-items: center;
 			justify-content: center;
-      position: absolute;
-      top: -5px;
-      right: -5px;
+			position: absolute;
+			top: -5px;
+			right: -5px;
 		}
 	}
 `
@@ -57,13 +58,14 @@ export const NavbarItems = styled.div`
 export const Search = styled.div`
 	display: flex;
 	align-items: center;
-	border: 0.5px solid lightgray;
+	border: 0.5px solid ${({ theme }) => theme.borderColor};
 	padding: 3px;
 
 	input {
 		border: none;
 		outline: none;
 		background-color: transparent;
+		color: ${({ theme }) => theme.borderColor ? 'gray' : '#000'};
 
 		&::placeholder {
 			font-size: 12px;

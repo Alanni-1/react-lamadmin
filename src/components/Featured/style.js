@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
-export const FeaturedContainer = styled.div`
+export const FeaturedContainer = styled.div.attrs({
+	className: 'box_shadow'
+})`
 	flex: 2;
-	box-shadow: ${({ theme }) => theme.boxShadow};
 	padding: 10px;
 `
 
@@ -33,6 +34,7 @@ export const FeaturedBotton = styled.div`
 
 	& > p:nth-of-type(2) {
 		font-size: 30px;
+		color: ${({ theme }) => theme.stroke};
 	}
 
 	& > p:nth-of-type(3) {

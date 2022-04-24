@@ -1,6 +1,10 @@
 import React from 'react'
-import { DataTableContainer, DataTableLink, DatatbleTitle } from './style'
-import { DataGrid } from '@mui/x-data-grid'
+import {
+	DataTableContainer,
+	DataTableLink,
+	DatatbleTitle,
+	DatableDataGrid,
+} from './style'
 import { userColumns, userRows } from './data'
 const DataTable = () => {
 	const actionColumn = [
@@ -10,7 +14,7 @@ const DataTable = () => {
 			width: 200,
 			renderCell: () => (
 				<div className="cellAction">
-					<DataTableLink to='/users/test'>
+					<DataTableLink to="/users/test">
 						<div className="viewButton">View</div>
 					</DataTableLink>
 					<div className="deleteButton">Delete</div>
@@ -23,11 +27,9 @@ const DataTable = () => {
 		<DataTableContainer>
 			<DatatbleTitle>
 				Add New Users
-				<DataTableLink to='/users/new'>
-					Add New 
-				</DataTableLink>
+				<DataTableLink to="/users/new">Add New</DataTableLink>
 			</DatatbleTitle>
-			<DataGrid
+			<DatableDataGrid
 				rows={userRows}
 				columns={userColumns.concat(actionColumn)}
 				pageSize={10}

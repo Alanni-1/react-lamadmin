@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { TableContainer, TableCell } from '@mui/material'
+import { TableContainer, TableCell, Table } from '@mui/material'
 
 export const DataTableContainer = styled(TableContainer)`
 	.cellWrapper {
@@ -16,7 +16,13 @@ export const DataTableContainer = styled(TableContainer)`
 	}
 `
 
+export const DataTableTable = styled(Table)`
+	background-color: ${({ theme }) => theme.table_backgroundColor};
+`
+
 export const DataTableCell = styled(TableCell)`
+	color: ${({ theme }) => theme.table_color} !important;
+
 	span {
 		padding: 15px;
 		border-radius: 5px;

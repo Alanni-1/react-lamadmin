@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const SidebarContainer = styled.div`
 	min-height: 100vh;
-	border-right: 1px solid lightgray;
+	border-right: 1px solid ${({ theme }) => theme.borderColor};
 `
 
 export const SidebarLogo = styled(Link)`
@@ -11,13 +11,13 @@ export const SidebarLogo = styled(Link)`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid ${({ theme }) => theme.borderColor};
 	text-decoration: none;
 
 	.logo {
 		font-size: 20px;
 		font-weight: bold;
-		color: #6439ff;
+		color: ${({ theme }) => theme.navbar_color || '#6439ff'};
 	}
 `
 
@@ -46,7 +46,7 @@ export const ButColor = styled.div`
 	height: 30px;
 	background-color: ${({ color }) => color};
 	border-radius: 50%;
-	border: 2px solid ${(props) => props.theme.color};
+	border: 2px solid ${({theme}) => theme.sidebar_borderColor};
 	box-sizing: border-box;
 	cursor: pointer;
 	margin-right: 10px;
@@ -60,12 +60,12 @@ export const SidebarLink = styled(Link)`
 	text-decoration: none;
 
 	&:hover {
-		background-color: #ece8ff;
+		background-color: ${({ theme }) => theme.hove_backgroundColor};
 	}
 
 	svg {
 		font-size: 18px;
-		color: #7451f8;
+		color: ${({ theme }) => theme.navbar_color || '#7451f8'};
 	}
 
 	span {

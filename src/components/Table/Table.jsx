@@ -1,6 +1,6 @@
 import React from 'react'
-import { Table, TableBody, TableHead, TableRow, Paper } from '@mui/material'
-import { DataTableCell, DataTableContainer } from './style'
+import { TableBody, TableHead, TableRow, Paper } from '@mui/material'
+import { DataTableCell, DataTableContainer, DataTableTable } from './style'
 
 const Tables = () => {
 	const rows = [
@@ -57,8 +57,8 @@ const Tables = () => {
 	]
 
 	return (
-		<DataTableContainer component={Paper} className="table">
-			<Table sx={{ minWidth: 650 }} aria-label="simple table">
+		<DataTableContainer component={Paper}>
+			<DataTableTable sx={{ minWidth: 650 }} aria-label="simple table">
 				<TableHead>
 					<TableRow>
 						<DataTableCell>Tracking ID</DataTableCell>
@@ -96,7 +96,7 @@ const Tables = () => {
 						</TableRow>
 					))}
 				</TableBody>
-			</Table>
+			</DataTableTable>
 		</DataTableContainer>
 	)
 }
