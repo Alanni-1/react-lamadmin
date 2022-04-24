@@ -3,6 +3,7 @@ import {
 	SearchOutlined,
 	LanguageOutlined,
 	DarkModeOutlined,
+	LightMode,
 	FullscreenExitOutlined,
 	NotificationAddOutlined,
 	ChatBubbleOutlineOutlined,
@@ -18,7 +19,7 @@ const Navbar = () => {
 		PubSub.subscribe('getTheme', (_, data) => setTheme(data))
 		console.log(theme)
 		return () => {
-			
+			// PubSub.clearAllSubscriptions()
 		}
 	}, [theme])
 
@@ -39,7 +40,7 @@ const Navbar = () => {
 						English
 					</div>
 					<div onClick={setThemeFunc}>
-						<DarkModeOutlined />
+						{theme === light ? <DarkModeOutlined /> : <LightMode />}
 					</div>
 					<div>
 						<FullscreenExitOutlined />

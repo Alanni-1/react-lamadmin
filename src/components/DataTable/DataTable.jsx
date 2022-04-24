@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
 	DataTableContainer,
 	DataTableLink,
@@ -7,17 +7,28 @@ import {
 } from './style'
 import { userColumns, userRows } from './data'
 const DataTable = () => {
+	const [data, setData] = useState(userRows)
+
+	const handleDelete = (id) => {
+		setData(data.filter((item) => item.id !== id))
+	}
+
 	const actionColumn = [
 		{
 			field: 'action',
 			headerName: 'Action',
 			width: 200,
-			renderCell: () => (
+			renderCell: (props) => (
 				<div className="cellAction">
 					<DataTableLink to="/users/test">
 						<div className="viewButton">View</div>
 					</DataTableLink>
-					<div className="deleteButton">Delete</div>
+					<div
+						className="deleteButton"
+						onClick={() => handleDelete(props.row.id)}
+					>
+						Delete
+					</div>
 				</div>
 			),
 		},
@@ -30,7 +41,7 @@ const DataTable = () => {
 				<DataTableLink to="/users/new">Add New</DataTableLink>
 			</DatatbleTitle>
 			<DatableDataGrid
-				rows={userRows}
+				rows={data}
 				columns={userColumns.concat(actionColumn)}
 				pageSize={10}
 				rowsPerPageOptions={[10]}
